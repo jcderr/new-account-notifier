@@ -9,6 +9,8 @@ I have tried to keep my emails consistent, but there's invariably drift over
 time. Not anymore: create a template and a config, then define a user's new
 accounts and let 'er rip!
 
+Emails are sent with AWS SES. It's up to you to get set up there.
+
 # Usage
 
 Installation:
