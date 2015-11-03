@@ -50,7 +50,7 @@ Any other information a user many need to know can be included as well.
 ```
 
 And lastly, you'll make a yaml file for the user that includes his email and
-login information for each site.
+login information for each site. This file goes in `~/.acctnotify/users/someuser`.
 
 ```
 ---
@@ -64,3 +64,7 @@ login information for each site.
 ```
 
 The keys in `accounts` must match services in the config above.
+
+If you've got everything square:
+
+    $ nanotify someuser
