@@ -1,0 +1,8 @@
+You've been granted access to {{ service.name }}.
+
+    URL: {{ service.url }}
+    Username: {{ account.username }}
+    Password: {{ account.password }}
+
+Please take a moment to log in and set your own password. If you have
+any questions about this service, please contact {{ service.administrator }}.
