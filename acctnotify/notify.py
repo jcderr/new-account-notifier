@@ -25,7 +25,6 @@ class Notifier(object):
                 account=self.user.accounts[service]
             )
 
-            self.ses.verify_email_address(_svc['src_addr'])
             self.ses.send_email(
                 source=_svc['src_addr'],
                 subject=_svc['email_subject'],
