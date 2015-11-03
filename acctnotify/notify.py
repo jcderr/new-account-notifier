@@ -18,26 +18,18 @@ class Notifier(object):
         ''' triggers sending of emails representing new accounts '''
         for service in self.user.accounts:
             _svc = services_config[service]
-            
+
             email_template = self.templates.get_template(_svc['template'])
             email_content = email_template.render(
                 service=_svc,
                 account=self.user.accounts[service]
             )
 
-            print 'NOTIFY: {} using {} from {}'.format(
-                self.user.emails['primary'],
-                _svc['template'],
-                _svc['src_addr']
-            )
-            print 'VERIFY: verifying {}'.format(_svc['src_addr'])
             self.ses.verify_email_address(_svc['src_addr'])
-            print 'SEND: ...'
             self.ses.send_email(
                 source=_svc['src_addr'],
                 subject=_svc['email_subject'],
                 to_addresses=self.user.emails['primary'],
                 body=None,
                 text_body=email_content,
-                
             )
